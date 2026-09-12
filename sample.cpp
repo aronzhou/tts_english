@@ -82,6 +82,7 @@ int main(int argc, char *argv[])
   auto configpath = std::string(argv[1]);
   auto speaker = std::string(argv[2]);
   auto outputPath = std::string(argv[3]);
+  auto text = std::string(argv[4]);
 
   novottsOnnxInit(configpath.c_str());
   novottsEngineInit(&handler, configpath.c_str(), speaker.c_str());
@@ -89,7 +90,7 @@ int main(int argc, char *argv[])
 
   
   int audiosize = 0;
-  std::string text = "Today is Thursday. It is partly cloudy in ShenZhen today, with the temperature ranging from 26℃ to 30℃. The east wind blows at 4‑6 levels, and the air is quite humid. There is a chance of showers in the afternoon. It feels hot and sticky. Remember to bring an umbrella if you go out.";
+  // std::string text = "中华人名共和国 Today is Thursday. It is partly cloudy in ShenZhen today, with the temperature ranging from 26℃ to 30℃. The east wind blows at 4‑6 levels, and the air is quite humid. There is a chance of showers in the afternoon. It feels hot and sticky. Remember to bring an umbrella if you go out.";
   vector<string> textArray = SplitUtf8(text);
 
   FILE * fp = fopen(outputPath.c_str(), "wb");
